@@ -232,14 +232,9 @@
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
+        
         <li class="nav-item">
-            <a class="nav-link " href="{{ url('pengalaman_kerja') }}">
-                <i class="bi bi-grid"></i>
-                <span>Pengalaman Kerja</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link " href="{{ url('data_ektp') }}">
+            <a class="nav-link " href="{{ url('daftar_ektp') }}">
                 <i class="bi bi-menu-button-wide"></i>
                 <span>Data E-KTP</span>
             </a>

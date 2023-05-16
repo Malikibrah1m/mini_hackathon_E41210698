@@ -51,8 +51,8 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
-                                <form id="daftar_form" method="POST"
-                                    action="{{ route('data_ektp.store') }}">
+                                <form id="daftar_ektp_form" method="POST"
+                                    action="{{ route('daftar_ektp.store') }}">
                                     @csrf
                                     <div class="modal-body">
 
@@ -110,7 +110,7 @@
                             <tr>
                                 <th>No.</th>
                                 <th>Nama </th>
-                                <th>Nik</th>
+                                <th>NIK</th>
                                 <th>Telepon</th>
                                 <th>Tingkatan</th>
                                 <th>Tahun Daftar</th>
@@ -149,7 +149,7 @@
                                         data-bs-target="#editModal-{{ $item->id }}">
                                         Edit
                                     </button>
-                                    <form action="{{ route('data_ektp.destroy', $item->id) }}" method="POST"
+                                    <form action="{{ route('daftar_ektp.destroy', $item->id) }}" method="POST"
                                         class="d-inline">
                                         @csrf
                                         @method('DELETE')
@@ -167,8 +167,8 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
-                                        <form id="edit_daftar_form" method="POST"
-                                            action="{{ route('data_ektp.update', $item->id) }}">
+                                        <form id="edit_daftar_ktp_form" method="POST"
+                                            action="{{ route('daftar_ektp.update', $item->id) }}">
                                             @csrf
                                             @method('PUT')
                                             <div class="modal-body">
@@ -243,7 +243,7 @@
 <script>
     // Initialize form validation on the registration form.
     // It has the name attribute "registration"
-    $("form[name='daftar_form']").validate({
+    $("form[name='daftar_ektp_form']").validate({
         // Specify validation rules
         rules: {
             nama: "required",
@@ -277,7 +277,7 @@
                 data: $(form).serialize(),
                 success: function (response) {
                     // Show success message
-                    $('#daftar_form')[0].reset();
+                    $('#daftar_ektp_form')[0].reset();
                     $('.alert-success').fadeIn().html(response.message);
                 },
                 error: function (xhr) {
